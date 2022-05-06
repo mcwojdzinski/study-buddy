@@ -1,16 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'components/atoms/Button/Button';
-import { Wrapper } from './UsersListItem.styles';
+import { Wrapper, StyledAverage, StyledInfo } from './UsersListItem.styles';
 
-const UsersListItem = ({ userData: { average, name, attendance = '0%' } }) => (
+const showIndex = (index) => {
+  alert(`This student is #${index + 1}`);
+};
+
+const UsersListItem = ({ index, userData: { average, name, attendance = '0%' } }) => (
   <Wrapper>
-    <div>{average}</div>
-    <div>
+    <StyledAverage value={average}>{average}</StyledAverage>
+    <StyledInfo>
       <p>{name}</p>
-      <p>{attendance}</p>
-    </div>
-    <Button />
+      <p>attendance: {attendance}</p>
+    </StyledInfo>
+    <Button onClick={() => showIndex(index)} />
   </Wrapper>
 );
 
