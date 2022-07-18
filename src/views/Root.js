@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { GlobalStyles } from 'assets/styles/GlobalStyles';
+import { GlobalStyles } from 'assets/styles/globalStyles';
 import { theme } from 'assets/styles/theme';
 import { Wrapper } from './Root.styles';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
