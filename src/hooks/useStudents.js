@@ -11,7 +11,6 @@ export const useStudents = () => {
     }
   }, []);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const getStudentById = useCallback(async (studentId) => {
     try {
       const result = await axios.get(`/students/${studentId}`);
@@ -19,7 +18,7 @@ export const useStudents = () => {
     } catch (e) {
       console.log(e);
     }
-  });
+  }, []);
 
   const getStudentsByGroup = useCallback(async (groupId) => {
     try {
